@@ -129,7 +129,7 @@ class LoginPage extends StatelessWidget {
                         ),
                         margin: const EdgeInsets.all(30)
                       ),
-                     
+
                     ],
                   ),
                 ]
