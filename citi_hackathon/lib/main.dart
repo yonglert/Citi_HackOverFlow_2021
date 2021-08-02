@@ -1,3 +1,5 @@
+import 'package:citi_hackathon/qrgen/qrgen.dart';
+import 'package:citi_hackathon/qrgen/test.dart';
 import 'package:flutter/material.dart';
 import 'package:citi_hackathon/login/login.dart';
 
@@ -14,6 +16,6 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return LoginPage();
+    return Test();
   }
 }
