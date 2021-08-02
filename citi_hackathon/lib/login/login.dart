@@ -12,7 +12,9 @@ class LoginPage extends StatelessWidget {
 
     return MaterialApp(
         title: "ScanLor!",
+
         home: Scaffold(
+            backgroundColor: white,
             body: Stack(
                 alignment: Alignment.center,
                 children: <Widget>[
@@ -57,18 +59,77 @@ class LoginPage extends StatelessWidget {
                         ),
                         margin: const EdgeInsets.all(5),
                       ),
+                      // Email Container
                       Container(
-                        child: SizedBox(
-                            child: TextField(),
-                          height: 57,
-                          width: 325,
+                        child: TextField(
+                            style: TextStyle(
+                              fontFamily: 'inter',
+                              fontSize: 18,
+                            ),
+                            textAlign: TextAlign.center,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15)
+                              ),
+                              hintText: "Email",
+                            )
                         ),
-                        ,
-                        margin: const EdgeInsets.all(5),
+                        margin: const EdgeInsets.fromLTRB(40,60,40,0),
+                        decoration: new BoxDecoration(
+                            color: containerWhite,
+                            borderRadius: BorderRadius.circular(15),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.5),
+                                spreadRadius: 3,
+                                blurRadius: 8,
+                                offset: Offset(5,7)
+                              )
+                            ]
+                        ),
+                      ),
+                      // Password Container
+                      Container(
+                        child: TextField(
+                            style: TextStyle(
+                              fontFamily: 'inter',
+                              fontSize: 18,
+                            ),
+                            textAlign: TextAlign.center,
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(15)
+                              ),
+                              hintText: "Password",
+                            )
+                        ),
+                        margin: const EdgeInsets.fromLTRB(40,20,40,0),
+                        decoration: new BoxDecoration(
+                            color: containerWhite,
+                            borderRadius: BorderRadius.circular(15),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 3,
+                                  blurRadius: 8,
+                                  offset: Offset(5,7)
+                              )
+                            ]
+                        ),
                       ),
                       Container(
-                        margin: const EdgeInsets.all(5),
+                        child: Text(
+                          'Or Continue With',
+                          style: TextStyle(
+                            color: black,
+                            fontSize: 18,
+                            fontFamily: 'viga_regular',
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        margin: const EdgeInsets.all(30)
                       ),
+                     
                     ],
                   ),
                 ]
