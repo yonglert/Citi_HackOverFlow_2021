@@ -23,15 +23,20 @@ class LoginPage extends StatelessWidget {
                     children: <Widget>[
                       Center(
                         child: Container(
-                          child: Text(
-                              "ScanLor!",
-                              style: TextStyle(
-                                  color: blue,
-                                  fontSize: 62,
-                                  fontFamily: 'viga_regular',
-                                  letterSpacing: 0.5
-                              )
-                          ),
+                          height: 85,
+                          width: 85,
+                          child: Image.asset('images/logo.png'),
+                        )
+                      ),
+                      Container(
+                        child: Text(
+                            "ScanLor!",
+                            style: TextStyle(
+                                color: blue,
+                                fontSize: 62,
+                                fontFamily: 'viga_regular',
+                                letterSpacing: 0.5
+                            )
                         ),
                       ),
                       Container(
@@ -45,11 +50,11 @@ class LoginPage extends StatelessWidget {
                             ),
                           textAlign: TextAlign.center,
                         ),
-                        margin: const EdgeInsets.fromLTRB(10,0,10,45),
+                        margin: const EdgeInsets.fromLTRB(10,0,10,50),
                       ),
                       Container(
                         child: Text(
-                          "Login To Your Account",
+                          "Log in to your account",
                           style: TextStyle(
                               color: black,
                               fontSize: 24,
@@ -66,26 +71,19 @@ class LoginPage extends StatelessWidget {
                               fontFamily: 'inter',
                               fontSize: 18,
                             ),
-                            textAlign: TextAlign.center,
+                            textAlign: TextAlign.left,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(15)
                               ),
                               hintText: "Email",
+                              contentPadding: EdgeInsets.fromLTRB(20, 20, 0, 20),
                             )
                         ),
-                        margin: const EdgeInsets.fromLTRB(40,60,40,0),
+                        margin: const EdgeInsets.fromLTRB(40,20,40,0),
                         decoration: new BoxDecoration(
                             color: containerWhite,
                             borderRadius: BorderRadius.circular(15),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 3,
-                                blurRadius: 8,
-                                offset: Offset(5,7)
-                              )
-                            ]
                         ),
                       ),
                       // Password Container
@@ -95,11 +93,12 @@ class LoginPage extends StatelessWidget {
                               fontFamily: 'inter',
                               fontSize: 18,
                             ),
-                            textAlign: TextAlign.center,
+                            textAlign: TextAlign.left,
                             decoration: InputDecoration(
                               border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(15)
                               ),
+                              contentPadding: EdgeInsets.fromLTRB(20, 20, 0, 20),
                               hintText: "Password",
                             )
                         ),
@@ -107,31 +106,115 @@ class LoginPage extends StatelessWidget {
                         decoration: new BoxDecoration(
                             color: containerWhite,
                             borderRadius: BorderRadius.circular(15),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
-                                  spreadRadius: 3,
-                                  blurRadius: 8,
-                                  offset: Offset(5,7)
+
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(40, 55, 40, 50),
+                        child: ElevatedButton(
+                            onPressed: (){},
+                            style: ElevatedButton.styleFrom(
+                              primary: blue,
+                              padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
+                              fixedSize: Size(450, 70),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(15)
                               )
-                            ]
+                            ),
+                            child: Text(
+                                'Log In',
+                              style: TextStyle(
+                                fontFamily: 'viga_regular',
+                                fontSize: 24,
+                              ),
+                            ),
                         ),
                       ),
                       Container(
                         child: Text(
-                          'Or Continue With',
+                          'Or continue with',
                           style: TextStyle(
                             color: black,
                             fontSize: 18,
-                            fontFamily: 'viga_regular',
+                            fontFamily: 'inter',
                           ),
                           textAlign: TextAlign.center,
                         ),
-                        margin: const EdgeInsets.all(30)
+                        margin: const EdgeInsets.fromLTRB(0, 20, 0, 20)
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                                child: Row(
+                                    children: <Widget>[
+                                      Container(
+                                        height: 35,
+                                        width: 35,
+                                        child: Image.asset('images/facebook.png'),
+                                      ),
+                                      Container(
+                                        padding: EdgeInsets.fromLTRB(15, 15, 15, 15),
+                                        child: Text(
+                                          'Facebook',
+                                          style: TextStyle(
+                                            color: black,
+                                            fontSize: 18,
+                                            fontFamily: 'inter',
+                                          ),
+                                        ),
+                                      )
+                                    ]
+                                ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                border: Border.all(
+                                  color: black,
+                                  width: 1,
+                                ),
+
+                              ),
+
+                            ),
+                            Container(
+                              padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+                              child: Row(
+                                  children: <Widget>[
+                                    Container(
+                                      height: 35,
+                                      width: 35,
+                                      child: Image.asset('images/google.png'),
+                                    ),
+                                    Container(
+                                      padding: EdgeInsets.fromLTRB(15, 15, 15, 15),
+                                      child: Text(
+                                        'Google',
+                                        style: TextStyle(
+                                          color: black,
+                                          fontSize: 18,
+                                          fontFamily: 'inter',
+                                        ),
+                                      ),
+                                    )
+                                  ]
+                              ),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                border: Border.all(
+                                  color: black,
+                                  width: 1,
+                                ),
+
+                              ),
+
+                            ),
+                          ]
                       ),
 
                     ],
                   ),
+
                 ]
             )
         )
