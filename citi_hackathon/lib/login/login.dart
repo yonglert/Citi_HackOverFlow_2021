@@ -1,16 +1,15 @@
+import 'dart:ffi';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:citi_hackathon/const/colors.dart';
 
-class LoginPage extends StatefulWidget {
-  @override
-  _LoginPageState createState() => _LoginPageState();
 
-}
 
-class _LoginPageState extends State<LoginPage> {
+class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
         title: "ScanLor!",
         home: Scaffold(
@@ -21,25 +20,55 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Center(
-                        child: Text(
-                            "ScanLor!",
-                            style: TextStyle(
-                                color: blue,
-                                fontSize: 40,
-                                fontWeight: FontWeight.bold,
-                                letterSpacing: 0.5
-                            )
+                        child: Container(
+                          child: Text(
+                              "ScanLor!",
+                              style: TextStyle(
+                                  color: blue,
+                                  fontSize: 62,
+                                  fontFamily: 'viga_regular',
+                                  letterSpacing: 0.5
+                              )
+                          ),
                         ),
                       ),
-                      Text(
-                          "Support your favourite local brands",
+                      Container(
+                        child: Text(
+                            "Support your favourite\n local brands",
+                            style: TextStyle(
+                                color: black,
+                                fontSize: 18,
+                                fontFamily: 'inter',
+                                letterSpacing: 1
+                            ),
+                          textAlign: TextAlign.center,
+                        ),
+                        margin: const EdgeInsets.fromLTRB(10,0,10,45),
+                      ),
+                      Container(
+                        child: Text(
+                          "Login To Your Account",
                           style: TextStyle(
                               color: black,
-                              fontSize: 13,
-                              letterSpacing: 1
-                          )
+                              fontSize: 24,
+                              fontFamily: 'viga_regular',
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        margin: const EdgeInsets.all(5),
                       ),
-
+                      Container(
+                        child: SizedBox(
+                            child: TextField(),
+                          height: 57,
+                          width: 325,
+                        ),
+                        ,
+                        margin: const EdgeInsets.all(5),
+                      ),
+                      Container(
+                        margin: const EdgeInsets.all(5),
+                      ),
                     ],
                   ),
                 ]
