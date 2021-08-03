@@ -41,9 +41,6 @@ class VendorPage extends StatelessWidget {
                             height: 200,
                             alignment: Alignment.center,
                             child: Image.asset('images/blanco_prawn_mee.jpeg'),
-                            decoration: BoxDecoration(
-                              border: Border.all(color: black),
-                            ),
                           ),
                           Row(
                             children: [
