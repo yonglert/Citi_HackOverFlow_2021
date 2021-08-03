@@ -11,10 +11,21 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool inputField = false;
+  String searchText = "";
+  int _selectedIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+    if (_selectedIndex == 1) {
+      Navigator.pop(context);
+      Navigator.pushNamed(context, walletPage);
+    }
+  }
   @override
   Widget build(BuildContext context) {
-    bool inputField = false;
-    String searchText = "";
     return Scaffold(
         backgroundColor: white ,
         body: LayoutBuilder(
@@ -45,6 +56,7 @@ class _HomePageState extends State<HomePage> {
                                         child: GestureDetector(
                                           onTap: () {
                                             Navigator.pop(context);
+                                            Navigator.pushNamed(context, loginPage);
                                           },
                                           child: Icon(
                                             Icons.circle_notifications,
@@ -420,11 +432,13 @@ class _HomePageState extends State<HomePage> {
           },
         ),
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem> [
+        items:  <BottomNavigationBarItem> [
           BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'home', backgroundColor: blue),
           BottomNavigationBarItem(icon: Icon(Icons.account_balance_wallet_outlined), label: 'wallet', backgroundColor: blue),
           BottomNavigationBarItem(icon: Icon(Icons.account_circle_outlined), label: 'profile', backgroundColor: blue),
-        ]
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
         );
   }
