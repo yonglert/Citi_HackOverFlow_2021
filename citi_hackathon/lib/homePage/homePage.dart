@@ -14,8 +14,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     bool inputField = false;
+    String searchText = "";
     return Scaffold(
-        backgroundColor: white,
+        backgroundColor: white ,
         body: LayoutBuilder(
           builder: (BuildContext context, BoxConstraints viewportConstraints) {
             return SingleChildScrollView(
@@ -70,19 +71,13 @@ class _HomePageState extends State<HomePage> {
                                               }
                                             },
                                             decoration: InputDecoration(
-                                                prefixIcon: GestureDetector(
-                                                  onTap: () {
-                                                    if (inputField) {
-                                                      Navigator.pop(context);
-                                                    }
-                                                  },
-                                                  child: Icon(
-                                                    Icons.search_outlined,
-                                                    color: black,
-                                                  ),
+                                                suffixIcon: Icon(Icons.east),
+                                                prefixIcon: Icon(
+                                                  Icons.search_outlined,
+                                                  color: black,
                                                 ),
                                                 floatingLabelBehavior: FloatingLabelBehavior.auto,
-                                                fillColor: searchbarGrey,
+                                                fillColor: Colors.white30,
                                                 filled: true,
                                                 border: OutlineInputBorder(
                                                   borderRadius: BorderRadius.circular(15),
@@ -97,7 +92,7 @@ class _HomePageState extends State<HomePage> {
                                                 labelText: "What vouchers are you looking for?",
                                                 labelStyle: TextStyle(
                                                   fontFamily: 'inter',
-                                                  fontSize: 13,
+                                                  fontSize: 12,
                                                   color: black,
                                                 )
                                             )
@@ -110,9 +105,17 @@ class _HomePageState extends State<HomePage> {
                                   child: Column(
                                     children: <Widget>[
                                       Container(
-                                        height: 150,
+                                        height: 200,
                                         width: 325,
                                         decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                            begin: Alignment.topCenter,
+                                            end: Alignment.bottomCenter,
+                                            colors: <Color>[
+                                              Color(0xFF507FDC),
+                                              Color(0xFF5451F3)
+                                            ]
+                                          ),
                                           color: blue,
                                           borderRadius: BorderRadius.circular(15),
                                         ),
@@ -132,6 +135,7 @@ class _HomePageState extends State<HomePage> {
                                               child: Container(
                                                 child: Column(
                                                   crossAxisAlignment: CrossAxisAlignment.start,
+                                                  mainAxisAlignment: MainAxisAlignment.center,
                                                   children: <Widget> [
                                                     Container(
                                                       child: Text(
@@ -144,22 +148,25 @@ class _HomePageState extends State<HomePage> {
                                                       ),
                                                       padding: EdgeInsets.fromLTRB(0, 20, 30, 10),
                                                     ),
-                                                    Container(
-                                                      padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-                                                      decoration: BoxDecoration(
-                                                        color: white,
-                                                        borderRadius: BorderRadius.circular(15),
-                                                        border: Border.all(
-                                                            color: white
+                                                    GestureDetector(
+                                                      onTap: (){},
+                                                      child: Container(
+                                                        padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                                                        decoration: BoxDecoration(
+                                                          color: white,
+                                                          borderRadius: BorderRadius.circular(15),
+                                                          border: Border.all(
+                                                              color: white
+                                                          ),
                                                         ),
-                                                      ),
-                                                      child: Text(
-                                                        'Buy Now!',
-                                                        style:
-                                                        TextStyle(
-                                                            color: blue,
-                                                            fontWeight: FontWeight.bold,
-                                                            fontFamily: 'viga_regular'
+                                                        child: Text(
+                                                          'Buy Now!',
+                                                          style:
+                                                          TextStyle(
+                                                              color: blue,
+                                                              fontWeight: FontWeight.bold,
+                                                              fontFamily: 'viga_regular'
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
@@ -258,7 +265,10 @@ class _HomePageState extends State<HomePage> {
                                                       child: Container(
                                                           height: 120,
                                                           width: 150,
-                                                          child: Image.asset('images/hawker.jpeg')
+                                                          child: Padding(
+                                                            padding: const EdgeInsets.all(15.0),
+                                                            child: Image.asset('images/PLS_logo.png'),
+                                                          )
                                                       ),
                                                     ),
                                                     Center(
@@ -317,65 +327,86 @@ class _HomePageState extends State<HomePage> {
                                           ),
                                         ],
                                       ),
-                                      Container(
-                                        height: 150,
-                                        width: 325,
-                                        decoration: BoxDecoration(
-                                          color: blue,
-                                          borderRadius: BorderRadius.circular(15),
-                                        ),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                          children: <Widget> [
-                                            Expanded(
-                                              flex: 1,
-                                              child: Container(
-                                                  height: 120,
-                                                  width: 120,
-                                                  child: Image.asset('images/singapore.png')
+                                      Padding(
+                                        padding: EdgeInsets.fromLTRB(30, 10, 30, 5),
+                                        child: Container(
+                                          height: 120,
+                                          width: 325,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.circular(25),
+                                          ),
+                                          child: Row(
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+                                                child: Image.asset('images/love_bonito.png'),
                                               ),
-                                            ),
-                                            Expanded(
-                                              flex: 1,
-                                              child: Container(
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
                                                 child: Column(
+                                                  mainAxisAlignment: MainAxisAlignment.center,
                                                   crossAxisAlignment: CrossAxisAlignment.start,
-                                                  children: <Widget> [
-                                                    Container(
-                                                      child: Text(
-                                                        'National Day\nPromotions',
+                                                  children: [
+                                                    Text("Love Bonito",
                                                         style: TextStyle(
-                                                          fontSize: 22,
-                                                          color: white,
                                                           fontFamily: 'viga_regular',
-                                                        ),
-                                                      ),
-                                                      padding: EdgeInsets.fromLTRB(0, 20, 30, 10),
+                                                          fontSize: 24,
+                                                        )
                                                     ),
-                                                    Container(
-                                                      padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
-                                                      decoration: BoxDecoration(
-                                                        color: white,
-                                                        borderRadius: BorderRadius.circular(15),
-                                                        border: Border.all(
-                                                            color: white
-                                                        ),
-                                                      ),
-                                                      child: Text(
-                                                        'Buy Now!',
-                                                        style:
-                                                        TextStyle(
-                                                            color: blue,
-                                                            fontWeight: FontWeight.bold,
-                                                            fontFamily: 'viga_regular'
-                                                        ),
-                                                      ),
+                                                    Text("10 Vouchers Available",
+                                                        style: TextStyle(
+                                                          fontFamily: 'inter',
+                                                          fontSize: 14,
+                                                          color: blue,
+                                                        )
                                                     ),
                                                   ],
                                                 ),
                                               ),
-                                            ),
-                                          ],
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.fromLTRB(30, 0, 30, 5),
+                                        child: Container(
+                                          height: 120,
+                                          width: 325,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius: BorderRadius.circular(25),
+                                          ),
+                                          child: Row(
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+                                                child: Image.asset('images/kopitiam.jpeg', width: 100,height: 100),
+                                              ),
+                                              Padding(
+                                                padding: const EdgeInsets.all(8.0),
+                                                child: Column(
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text("Kopitiam",
+                                                      style: TextStyle(
+                                                        fontFamily: 'viga_regular',
+                                                        fontSize: 24,
+                                                      )
+                                                    ),
+                                                    Text("14 Vouchers Available",
+                                                        style: TextStyle(
+                                                          fontFamily: 'inter',
+                                                          fontSize: 14,
+                                                          color: blue,
+                                                        )
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
                                     ],
