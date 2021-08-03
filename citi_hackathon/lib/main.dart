@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:citi_hackathon/login/login.dart';
+import 'package:citi_hackathon/homePage/homePage.dart';
+import 'package:citi_hackathon/const/routeNames.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,6 +16,13 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return LoginPage();
+    return MaterialApp(
+      title: 'ScanLor!',
+      home: LoginPage(),
+      routes: <String, WidgetBuilder>{
+        loginPage: (BuildContext context) => LoginPage(),
+        homePage: (BuildContext context) => HomePage(),
+      },
+    );
   }
 }
