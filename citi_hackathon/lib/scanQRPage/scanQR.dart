@@ -32,11 +32,16 @@ class _ScanQRPageState extends State<ScanQRPage> {
     controller!.resumeCamera();
   }
 
+  void _onSuccess() {
+      Navigator.pop(context);
+      Navigator.pushNamed(context, successfulScan);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: <Widget>[
+        children: [
           Expanded(flex: 4, child: _buildQrView(context)),
           Expanded(
             flex: 1,
@@ -44,13 +49,23 @@ class _ScanQRPageState extends State<ScanQRPage> {
               fit: BoxFit.contain,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
+                children: [
                   if (result != null)
-                    Text(
-                        'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
-
+                    Text('Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}',
+                        style: TextStyle(
+                          fontFamily: 'inter',
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: grey,
+                        ))
                   else
-                    Text('Hold your camera to scan QR Code for redemption'),
+                    Text('Hold your camera to scan QR Code for redemption',
+                        style: TextStyle(
+                      fontFamily: 'inter',
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: grey,
+                    )),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -107,7 +122,13 @@ class _ScanQRPageState extends State<ScanQRPage> {
                                       fontWeight: FontWeight.bold,
                                       color: white));
                                 } else {
-                                  return Text('loading');
+                                  return Text('Loading',
+                                      style: TextStyle(
+                                        fontFamily: 'inter',
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold,
+                                        color: white,
+                                      ));
                                 }
                               },
                             )),
@@ -132,7 +153,7 @@ class _ScanQRPageState extends State<ScanQRPage> {
                                   borderRadius: BorderRadius.circular(15)
                               )
                           ),
-                          child: Text('pause', style: TextStyle(fontSize: 30,
+                          child: Text('Pause', style: TextStyle(fontSize: 30,
                             fontFamily: "inter",
                             fontWeight: FontWeight.bold,
                             color: white)),
@@ -153,7 +174,7 @@ class _ScanQRPageState extends State<ScanQRPage> {
                                   borderRadius: BorderRadius.circular(15)
                               )
                           ),
-                          child: Text('resume', style: TextStyle(fontSize: 30,
+                          child: Text('Resume', style: TextStyle(fontSize: 30,
                               fontFamily: "inter",
                               fontWeight: FontWeight.bold,
                               color: white)),
@@ -198,6 +219,7 @@ class _ScanQRPageState extends State<ScanQRPage> {
     controller.scannedDataStream.listen((scanData) {
       setState(() {
         result = scanData;
+        _onSuccess();
       });
     });
   }

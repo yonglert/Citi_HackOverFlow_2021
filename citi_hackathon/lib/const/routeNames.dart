@@ -10,3 +10,5 @@ const voucherPurchasePage = '/voucherPurchase';
 const successfulPurchasePage = '/successfulPurchase';
 const scanQRPage = '/scanQRPage';
 const successfulScan= '/successfulScan';
+const pastTransactionsPage= '/pastTransactionsPage';
+const cashierHomePage= '/cashierHomePage';

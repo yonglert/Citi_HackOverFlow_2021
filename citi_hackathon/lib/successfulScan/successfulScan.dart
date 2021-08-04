@@ -25,8 +25,8 @@ class _SuccessfulScanState extends State<SuccessfulScan> {
               children: [
                 Center(
                     child: Container(
-                      height: 200,
-                      width: 200,
+                      height: 160,
+                      width: 160,
                       child: Image.asset('images/tickmark.png'),
                     )
                 ),
@@ -65,8 +65,8 @@ class _SuccessfulScanState extends State<SuccessfulScan> {
                   padding: EdgeInsets.fromLTRB(40, 40, 40, 30),
                   child: ElevatedButton(
                     onPressed: (){
-                      Navigator.pushNamed(context, homePage);
-                      // _navigateToHomePage(context);
+                      Navigator.pop(context);
+                      Navigator.pushNamed(context, scanQRPage);
                     },
                     style: ElevatedButton.styleFrom(
                         primary: blue,
@@ -89,7 +89,8 @@ class _SuccessfulScanState extends State<SuccessfulScan> {
                   padding: EdgeInsets.fromLTRB(40, 40, 40, 30),
                   child: ElevatedButton(
                     onPressed: (){
-                      Navigator.pushNamed(context, homePage);
+                      Navigator.pop(context);
+                      Navigator.pushNamed(context, pastTransactionsPage);
                       // _navigateToHomePage(context);
                     },
                     style: ElevatedButton.styleFrom(
