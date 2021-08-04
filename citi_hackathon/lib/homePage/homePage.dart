@@ -170,7 +170,9 @@ class _HomePageState extends State<HomePage> {
                                                       padding: EdgeInsets.fromLTRB(0, 20, 30, 10),
                                                     ),
                                                     GestureDetector(
-                                                      onTap: (){},
+                                                      onTap: (){
+                                                        Navigator.pushNamed(context, voucherPurchasePage);
+                                                      },
                                                       child: Container(
                                                         padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                                                         decoration: BoxDecoration(

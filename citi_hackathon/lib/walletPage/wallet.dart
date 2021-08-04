@@ -3,7 +3,6 @@ import 'dart:ffi';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:citi_hackathon/const/colors.dart';
-import 'package:citi_hackathon/homePage/homePage.dart';
 import 'package:citi_hackathon/const/routeNames.dart';
 
 
@@ -116,14 +115,17 @@ class _WalletPageState extends State<WalletPage> {
                                                           color: black,
                                                         )
                                                     ),
-                                                    Padding(
-                                                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                                                      child: Text("Use Now",
-                                                          style: TextStyle(
-                                                            fontFamily: 'inter',
-                                                            fontSize: 16,
-                                                            color: blue,
-                                                          )
+                                                    GestureDetector(
+                                                      onTap: () {Navigator.pushNamed(context, voucherDetailsPage);},
+                                                      child: Padding(
+                                                        padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                                                        child: Text("Use Now",
+                                                            style: TextStyle(
+                                                              fontFamily: 'inter',
+                                                              fontSize: 16,
+                                                              color: blue,
+                                                            )
+                                                        ),
                                                       ),
                                                     ),
                                                   ],
