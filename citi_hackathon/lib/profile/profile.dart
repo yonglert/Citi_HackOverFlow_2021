@@ -49,97 +49,57 @@ class _ProfilePageState extends State<ProfilePage> {
                   child: IntrinsicHeight(
                       child: Column(
                         children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+                            child: Container(
+                                width: 350.0,
+                                height: 250.0,
+                                decoration: new BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    image: new DecorationImage(
+                                        fit: BoxFit.fill,
+                                        image: AssetImage("images/aleric_chan.jpeg"),
+                                    )
+                                )
+                            ),
+                          ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              GestureDetector(
-                                onTap: (){
-                                  Navigator.pushNamed(context,homePage);
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.fromLTRB(25, 50, 0, 30),
-                                  child: Container(
-                                    alignment: Alignment.centerRight,
-                                    width: 45, height: 45,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(15),
-                                      gradient: LinearGradient(
-                                          begin: Alignment.topCenter,
-                                          end: Alignment.bottomCenter,
-                                          colors: <Color>[
-                                            Color(0xFF507FDC),
-                                            Color(0xFF5451F3)
-                                          ]
-                                      ),
-                                    ),
-                                    child:
-                                    Icon(
-                                      Icons.arrow_back_ios,
-                                      color: white,
-                                      size: 35,
-                                    ),
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(15),
+                                    color: Color.fromRGBO(255, 243, 221, 1),
                                   ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Container(
-                              width: 350.0,
-                              height: 250.0,
-                              decoration: new BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: new DecorationImage(
-                                      fit: BoxFit.fill,
-                                      image: AssetImage("images/aleric_chan.jpeg"),
-                                  )
-                              )
-                          ),
-                          Row(
-                            children: [
-                              ButtonBar(
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  ElevatedButton(
+                                  child: Padding(
+                                    padding: EdgeInsets.fromLTRB(10, 8, 10, 8),
                                     child: Text(
                                       'Member Gold',
                                       style: TextStyle(
+                                        fontSize: 14,
+                                        fontFamily: 'viga_regular',
                                         color: Color.fromRGBO(254, 173, 29, 1),
                                       ),
                                     ),
-                                    onPressed: null,
-                                    style: ButtonStyle(
-                                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                          RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(18.0),
-                                          )
-                                      ),
-                                      backgroundColor: MaterialStateProperty.all<Color>(Color.fromRGBO(255, 243, 221, 1)),
-                                    ),
                                   ),
-                                ],
+                                ),
                               )
                             ],
                           ),
                           Row(
-                            children: [
-                              Text("Aleric Chan",
-                                style: TextStyle(
-                                  fontSize: 27,
-                                  fontFamily: "viga_regular",
+                            children: <Widget> [
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
+                                child: Text("Aleric Chan",
+                                  style: TextStyle(
+                                    fontSize: 32,
+                                    fontFamily: "viga_regular",
+                                  ),
                                 ),
                               ),
-                              Container(
-                                height: 34,
-                                width: 34,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                                child: Icon(
-                                    Icons.edit,
-                                    color: Color.fromRGBO(80, 127, 220, 1),
-                                    size: 20.0
-                                ),
-                              ),
+                              Image.asset('edit_logo.png'),
                             ]
                           ),
                           Container(
