@@ -11,6 +11,8 @@ import 'package:citi_hackathon/voucherDetails/voucherDetails.dart';
 import 'package:citi_hackathon/paymentPage/paymentPage.dart';
 import 'package:citi_hackathon/confirmOrder/confirmOrderPage.dart';
 import 'package:citi_hackathon/successfulPurchase/successfulPurchasePage.dart';
+import 'package:citi_hackathon/pastTransactionsPage/pastTransactionsPage.dart';
+import 'package:citi_hackathon/cashierHomePage/cashierHomePage.dart';
 import 'package:citi_hackathon/const/routeNames.dart';
 
 void main() {
@@ -20,6 +22,7 @@ void main() {
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
+
 }
 
 class _MyAppState extends State<MyApp> {
@@ -27,7 +30,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ScanLor!',
-      home: VendorPage(),
+      home: ScanQRPage(),
       routes: <String, WidgetBuilder>{
         loginPage: (BuildContext context) => LoginPage(),
         homePage: (BuildContext context) => HomePage(),
@@ -41,6 +44,8 @@ class _MyAppState extends State<MyApp> {
         successfulPurchasePage: (BuildContext context) => SuccessfulPurchasePage(),
         scanQRPage: (BuildContext context) => ScanQRPage(),
         successfulScan: (BuildContext context) => SuccessfulScan(),
+        pastTransactionsPage: (BuildContext context) => PastTransactionsPage(),
+        cashierHomePage: (BuildContext context) => CashierHomePage(),
       },
     );
   }

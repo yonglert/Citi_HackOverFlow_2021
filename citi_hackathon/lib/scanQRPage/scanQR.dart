@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:io';
 import 'dart:developer';
 import 'package:flutter/foundation.dart';
@@ -32,11 +31,16 @@ class _ScanQRPageState extends State<ScanQRPage> {
     controller!.resumeCamera();
   }
 
+  void _onSuccess() {
+      Navigator.pop(context);
+      Navigator.pushNamed(context, successfulScan);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: <Widget>[
+        children: [
           Expanded(flex: 4, child: _buildQrView(context)),
           Expanded(
             flex: 1,
@@ -44,73 +48,60 @@ class _ScanQRPageState extends State<ScanQRPage> {
               fit: BoxFit.contain,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
+                children: [
                   if (result != null)
-                    Text(
-                        'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
-
+                    Text('Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}',
+                        style: TextStyle(
+                          fontFamily: 'inter',
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: grey,
+                        ))
                   else
-                    Text('Hold your camera to scan QR Code for redemption'),
+                    Text('Hold your camera to scan QR Code for redemption',
+                        style: TextStyle(
+                      fontFamily: 'inter',
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: grey,
+                    )),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
                       Container(
                         margin: EdgeInsets.all(8),
-                        child: ElevatedButton(
-                            onPressed: () async {
+                        child: GestureDetector(
+                            onTap: () async {
                               await controller?.toggleFlash();
                               setState(() {});
                             },
-                            style: ElevatedButton.styleFrom(
-                                primary: blue,
-                                padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
-                                fixedSize: Size(450, 70),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15)
-                                )
+                            child: Icon(
+                              Icons.circle_notifications_outlined,
+                              color: blue,
+                              size: 45,
                             ),
-                            child: FutureBuilder(
-                              future: controller?.getFlashStatus(),
-                              builder: (context, snapshot) {
-                                return Text('Flash: ${snapshot.data}',
-                                    style: TextStyle(fontSize: 30,
-                                    fontFamily: "inter",
-                                    fontWeight: FontWeight.bold,
-                                    color: white));
-                              },
-                            )),
+                            ),
                       ),
                       Container(
                         margin: EdgeInsets.all(8),
-                        child: ElevatedButton(
-                            onPressed: () async {
-                              await controller?.flipCamera();
-                              setState(() {});
-                            },
-                            style: ElevatedButton.styleFrom(
-                                primary: blue,
-                                padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
-                                fixedSize: Size(450, 70),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15)
-                                )
+                        child: GestureDetector(
+                          onTap: () async {
+                            await controller?.flipCamera();
+                            setState(() {});
+                          },
+                          child: Container(
+                            child: Container(
+                              height: 120,
+                              width: 150,
+                              child: Padding(
+                                padding: const EdgeInsets.all(15.0),
+                                child: Image.asset('images/rotate-camera.png'),
+                              ),
                             ),
-                            child: FutureBuilder(
-                              future: controller?.getCameraInfo(),
-                              builder: (context, snapshot) {
-                                if (snapshot.data != null) {
-                                  return Text(
-                                      'Camera facing ${describeEnum(snapshot.data!)}',
-                                      style: TextStyle(fontSize: 30,
-                                      fontFamily: "inter",
-                                      fontWeight: FontWeight.bold,
-                                      color: white));
-                                } else {
-                                  return Text('loading');
-                                }
-                              },
-                            )),
+                          ),
+                        ),
+
                       )
                     ],
                   ),
@@ -132,7 +123,7 @@ class _ScanQRPageState extends State<ScanQRPage> {
                                   borderRadius: BorderRadius.circular(15)
                               )
                           ),
-                          child: Text('pause', style: TextStyle(fontSize: 30,
+                          child: Text('Pause', style: TextStyle(fontSize: 30,
                             fontFamily: "inter",
                             fontWeight: FontWeight.bold,
                             color: white)),
@@ -153,7 +144,7 @@ class _ScanQRPageState extends State<ScanQRPage> {
                                   borderRadius: BorderRadius.circular(15)
                               )
                           ),
-                          child: Text('resume', style: TextStyle(fontSize: 30,
+                          child: Text('Resume', style: TextStyle(fontSize: 30,
                               fontFamily: "inter",
                               fontWeight: FontWeight.bold,
                               color: white)),
@@ -198,6 +189,8 @@ class _ScanQRPageState extends State<ScanQRPage> {
     controller.scannedDataStream.listen((scanData) {
       setState(() {
         result = scanData;
+        print(result);
+        _onSuccess();
       });
     });
   }
