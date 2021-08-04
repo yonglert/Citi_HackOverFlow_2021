@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:citi_hackathon/const/colors.dart';
 import 'package:citi_hackathon/const/routeNames.dart';
-
+import 'package:qr_flutter/qr_flutter.dart';
 
 class PaymentPage extends StatefulWidget {
   @override
@@ -44,11 +44,24 @@ class _PaymentPageState extends State<PaymentPage> {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0,50,0,0),
                   child: Center(
-                      child: Container(
-                        height: 300,
-                        width: 300,
-                        child: Image.asset('images/random_qr.png'),
-                      )
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget> [
+                          Container(
+                            padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
+                            child: Container(
+                              height: 300,
+                              width: 300,
+                              child: QrImage(
+                                // ScanLor:<Generated ID>
+                                data: "ScanLor:e123456789",
+                                version: QrVersions.auto,
+                                size: 200.0,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                   ),
                 ),
                 Padding(
