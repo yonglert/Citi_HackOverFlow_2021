@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ScanLor!',
-      home: HomePage(),
+      home: VendorPage(),
       routes: <String, WidgetBuilder>{
         loginPage: (BuildContext context) => LoginPage(),
         homePage: (BuildContext context) => HomePage(),

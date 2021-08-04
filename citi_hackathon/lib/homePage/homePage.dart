@@ -231,47 +231,52 @@ class _HomePageState extends State<HomePage> {
                                         children: <Widget> [
                                           Padding(
                                             padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
-                                            child: Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.circular(15.0),
-                                                  color: Colors.white,
-                                                ),
-                                                child: Column(
-                                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                                  children: <Widget>[
-                                                    Container(
-                                                      child: Container(
-                                                          height: 120,
-                                                          width: 150,
-                                                          child: Image.asset('images/hawker.jpeg')
+                                            child: GestureDetector(
+                                              onTap: () {
+                                                Navigator.pushNamed(context, vendorPage);
+                                              },
+                                              child: Container(
+                                                  decoration: BoxDecoration(
+                                                    borderRadius: BorderRadius.circular(15.0),
+                                                    color: Colors.white,
+                                                  ),
+                                                  child: Column(
+                                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                                    children: <Widget>[
+                                                      Container(
+                                                        child: Container(
+                                                            height: 120,
+                                                            width: 150,
+                                                            child: Image.asset('images/hawker.jpeg')
+                                                        ),
                                                       ),
-                                                    ),
-                                                    Center(
-                                                      child: Container(
+                                                      Center(
+                                                        child: Container(
+                                                            child: Text(
+                                                              "Haig Road\nMarket",
+                                                              style: TextStyle(
+                                                                fontFamily: 'viga_regular',
+                                                                fontSize: 18,
+                                                              ),
+                                                              textAlign: TextAlign.center,
+                                                            )
+                                                        ),
+                                                      ),
+                                                      SizedBox(height: 5,),
+                                                      Container(
                                                           child: Text(
-                                                            "Haig Road\nMarket",
+                                                            "2.1 km",
                                                             style: TextStyle(
-                                                              fontFamily: 'viga_regular',
-                                                              fontSize: 18,
+                                                              fontFamily: 'inter',
+                                                              fontSize: 14,
+                                                              color: grey,
                                                             ),
-                                                            textAlign: TextAlign.center,
                                                           )
                                                       ),
-                                                    ),
-                                                    SizedBox(height: 5,),
-                                                    Container(
-                                                        child: Text(
-                                                          "2.1 km",
-                                                          style: TextStyle(
-                                                            fontFamily: 'inter',
-                                                            fontSize: 14,
-                                                            color: grey,
-                                                          ),
-                                                        )
-                                                    ),
-                                                    SizedBox(height: 15,)
-                                                  ],
-                                                )
+                                                      SizedBox(height: 15,)
+                                                    ],
+                                                  )
+                                              ),
                                             ),
                                           ),
                                           Padding(
@@ -357,7 +362,7 @@ class _HomePageState extends State<HomePage> {
                                           width: 325,
                                           decoration: BoxDecoration(
                                             color: Colors.white,
-                                            borderRadius: BorderRadius.circular(25),
+                                            borderRadius: BorderRadius.circular(15),
                                           ),
                                           child: Row(
                                             children: [
@@ -392,13 +397,13 @@ class _HomePageState extends State<HomePage> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.fromLTRB(30, 0, 30, 5),
+                                        padding: EdgeInsets.fromLTRB(30, 10, 30, 5),
                                         child: Container(
                                           height: 120,
                                           width: 325,
                                           decoration: BoxDecoration(
                                             color: Colors.white,
-                                            borderRadius: BorderRadius.circular(25),
+                                            borderRadius: BorderRadius.circular(15),
                                           ),
                                           child: Row(
                                             children: [
