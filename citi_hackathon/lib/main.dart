@@ -1,3 +1,4 @@
+import 'package:citi_hackathon/profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:citi_hackathon/login/login.dart';
 import 'package:citi_hackathon/homePage/homePage.dart';
@@ -20,12 +21,13 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ScanLor!',
-      home: WalletPage(),
+      home: ProfilePage(),
       routes: <String, WidgetBuilder>{
         loginPage: (BuildContext context) => LoginPage(),
         homePage: (BuildContext context) => HomePage(),
         vendorPage: (BuildContext context) => VendorPage(),
         walletPage: (BuildContext context) => WalletPage(),
+        profilePage: (BuildContext context) => ProfilePage(),
       },
     );
   }
