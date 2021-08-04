@@ -31,7 +31,7 @@ class _ScanQRPageState extends State<ScanQRPage> {
     controller!.resumeCamera();
   }
 
-  void _onSuccess() {
+  void _onSuccess(result) {
       Navigator.pop(context);
       Navigator.pushNamed(context, successfulScan);
   }
@@ -77,9 +77,9 @@ class _ScanQRPageState extends State<ScanQRPage> {
                               setState(() {});
                             },
                             child: Icon(
-                              Icons.circle_notifications_outlined,
+                              Icons.offline_bolt,
                               color: blue,
-                              size: 45,
+                              size: 80,
                             ),
                             ),
                       ),
@@ -111,45 +111,24 @@ class _ScanQRPageState extends State<ScanQRPage> {
                     children: <Widget>[
                       Container(
                         margin: EdgeInsets.all(8),
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            await controller?.pauseCamera();
-                          },
-                          style: ElevatedButton.styleFrom(
-                              primary: blue,
-                              padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
-                              fixedSize: Size(450, 70),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15)
-                              )
-                          ),
-                          child: Text('Pause', style: TextStyle(fontSize: 30,
-                            fontFamily: "inter",
-                            fontWeight: FontWeight.bold,
-                            color: white)),
+                        child: GestureDetector(
+                            onTap: (){
+                              Navigator.pop(context);
+                              Navigator.pushNamed(context, cashierHomePage);
+                            },
+                            child: Container(
+                                height: 35,
+                                width:35,
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFd1dbff),
+                                  borderRadius: BorderRadius.circular(15),
+                                ),
+                                child: Icon(Icons.arrow_back_ios_new_outlined, color: blue,size: 30,)
+                            )
                         ),
                       ),
 
-                      Container(
-                        margin: EdgeInsets.all(8),
-                        child: ElevatedButton(
-                          onPressed: () async {
-                            await controller?.resumeCamera();
-                          },
-                          style: ElevatedButton.styleFrom(
-                              primary: blue,
-                              padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
-                              fixedSize: Size(450, 70),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(15)
-                              )
-                          ),
-                          child: Text('Resume', style: TextStyle(fontSize: 30,
-                              fontFamily: "inter",
-                              fontWeight: FontWeight.bold,
-                              color: white)),
-                        ),
-                      )
+
                     ],
                   ),
                 ],
@@ -190,7 +169,7 @@ class _ScanQRPageState extends State<ScanQRPage> {
       setState(() {
         result = scanData;
         print(result);
-        _onSuccess();
+        _onSuccess(result);
       });
     });
   }
