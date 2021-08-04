@@ -2,9 +2,37 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:citi_hackathon/const/colors.dart';
 import 'package:citi_hackathon/const/routeNames.dart';
+import 'package:citi_hackathon/homePage/homePage.dart';
 
-class ProfilePage extends StatelessWidget {
+class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
+
+  @override
+  _ProfilePageState createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  bool inputField = false;
+
+  String searchText = "";
+
+  int _selectedIndex = 2;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+    if (_selectedIndex == 1) {
+      Navigator.pop(context);
+      Navigator.pushNamed(context, walletPage);
+    } else if (_selectedIndex == 2) {
+      Navigator.pop(context);
+      Navigator.pushNamed(context, profilePage);
+    } else if (_selectedIndex == 0) {
+      Navigator.pop(context);
+      Navigator.pushNamed(context, homePage);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,21 +49,39 @@ class ProfilePage extends StatelessWidget {
                   child: IntrinsicHeight(
                       child: Column(
                         children: <Widget>[
-                          GestureDetector(
-                            onTap: (){
-                              Navigator.pushNamed(context,homePage);
-                            },
-                            child: Container(
-                              padding: EdgeInsets.fromLTRB(30, 50, 0, 30),
-                              height: 100,
-                              alignment: Alignment.topLeft,
-                              child:
-                              Icon(
-                                Icons.west,
-                                color: blue,
-                                size: 45,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              GestureDetector(
+                                onTap: (){
+                                  Navigator.pushNamed(context,homePage);
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.fromLTRB(25, 50, 0, 30),
+                                  child: Container(
+                                    alignment: Alignment.centerRight,
+                                    width: 45, height: 45,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(15),
+                                      gradient: LinearGradient(
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          colors: <Color>[
+                                            Color(0xFF507FDC),
+                                            Color(0xFF5451F3)
+                                          ]
+                                      ),
+                                    ),
+                                    child:
+                                    Icon(
+                                      Icons.arrow_back_ios,
+                                      color: white,
+                                      size: 35,
+                                    ),
+                                  ),
+                                ),
                               ),
-                            ),
+                            ],
                           ),
                           Container(
                               width: 350.0,
@@ -571,6 +617,15 @@ class ProfilePage extends StatelessWidget {
               )
           );
         },
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items:  <BottomNavigationBarItem> [
+          BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'home', backgroundColor: blue),
+          BottomNavigationBarItem(icon: Icon(Icons.account_balance_wallet_outlined), label: 'wallet', backgroundColor: blue),
+          BottomNavigationBarItem(icon: Icon(Icons.account_circle_outlined), label: 'profile', backgroundColor: blue),
+        ],
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
       ),
     );
   }

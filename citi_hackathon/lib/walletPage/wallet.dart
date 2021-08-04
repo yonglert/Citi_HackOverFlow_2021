@@ -22,7 +22,13 @@ class _WalletPageState extends State<WalletPage> {
     setState(() {
       _selectedIndex = index;
     });
-    if (_selectedIndex == 0) {
+    if (_selectedIndex == 1) {
+      Navigator.pop(context);
+      Navigator.pushNamed(context, walletPage);
+    } else if (_selectedIndex == 2) {
+      Navigator.pop(context);
+      Navigator.pushNamed(context, profilePage);
+    } else if (_selectedIndex == 0) {
       Navigator.pop(context);
       Navigator.pushNamed(context, homePage);
     }

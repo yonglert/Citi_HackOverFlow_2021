@@ -22,6 +22,9 @@ class _HomePageState extends State<HomePage> {
     if (_selectedIndex == 1) {
       Navigator.pop(context);
       Navigator.pushNamed(context, walletPage);
+    } else if (_selectedIndex == 2) {
+      Navigator.pop(context);
+      Navigator.pushNamed(context, profilePage);
     }
   }
   @override
@@ -58,10 +61,16 @@ class _HomePageState extends State<HomePage> {
                                             Navigator.pop(context);
                                             Navigator.pushNamed(context, loginPage);
                                           },
-                                          child: Icon(
-                                            Icons.circle_notifications,
-                                            color: blue,
-                                            size: 45,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              color: white,
+                                              borderRadius: BorderRadius.circular(30)
+                                            ),
+                                            child: Icon(
+                                              Icons.circle_notifications_outlined,
+                                              color: blue,
+                                              size: 45,
+                                            ),
                                           ),
                                         ),
                                       )
