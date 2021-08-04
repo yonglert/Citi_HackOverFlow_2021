@@ -188,6 +188,7 @@ class _ConfirmOrderPageState extends State<ConfirmOrderPage> {
                                   padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
                                   child: ElevatedButton(
                                     onPressed: (){
+                                      Navigator.pop(context);
                                       Navigator.pushNamed(context, successfulPurchasePage);
                                       // _navigateToHomePage(context);
                                     },

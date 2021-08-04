@@ -174,6 +174,7 @@ class _VoucherDetailsState extends State<VoucherDetails> {
                   padding: EdgeInsets.fromLTRB(40, 50, 40, 30),
                   child: ElevatedButton(
                     onPressed: (){
+                      Navigator.pop(context);
                       Navigator.pushNamed(context, paymentPage);
                       // _navigateToHomePage(context);
                     },

@@ -89,487 +89,294 @@ class _ProfilePageState extends State<ProfilePage> {
                             ],
                           ),
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget> [
                               Padding(
-                                padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
+                                padding: EdgeInsets.fromLTRB(30, 10, 0, 0),
                                 child: Text("Aleric Chan",
                                   style: TextStyle(
-                                    fontSize: 32,
+                                    fontSize: 34,
                                     fontFamily: "viga_regular",
                                   ),
                                 ),
                               ),
-                              Image.asset('edit_logo.png'),
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(20, 10, 30, 0),
+                                child: Container(
+                                  height: 35,
+                                    width:35,
+                                  child: Image.asset('images/edit_logo.png'),
+                                ),
+                              ),
                             ]
                           ),
                           Container(
-                            height: 100,
-                            padding: EdgeInsets.all(20.0),
-                            alignment: Alignment.centerLeft,
+                            alignment: Alignment.topLeft,
+                            padding: EdgeInsets.fromLTRB(30, 0, 0, 30),
                             child: Text("alechan91@gmail.com",
                               style: TextStyle(
                                 fontFamily: "inter",
-                                fontSize: 14,
-                                color: Color.fromRGBO(59, 59, 59, 1),
+                                fontSize: 16,
+                                color: grey,
                               ),
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                alignment: Alignment.centerLeft,
-                                width: 45.0,
-                                height: 45.0,
-                                decoration: new BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  image: new DecorationImage(
-                                    fit: BoxFit.fill,
-                                    image: AssetImage("images/google.png"),
-                                  )
-                                )
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(15),
                               ),
-                              Text("You Have 2 Vouchers",
-                                style: TextStyle(
-                                  fontFamily: "viga_regular",
-                                  fontSize: 15,
-                                ),
+                              child: Row(
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(15, 15, 0, 15),
+                                    child: Container(
+                                      height:53,
+                                      width: 56,
+                                      child: Image.asset('images/voucher_logo.png')
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: (){
+                                      Navigator.pop(context);
+                                      Navigator.pushNamed(context, walletPage);
+                                    },
+                                    child: Padding(
+                                      padding: EdgeInsets.fromLTRB(25, 0, 0, 0),
+                                      child: Text("You Have 2 Vouchers",
+                                        style: TextStyle(
+                                          fontFamily: "viga_regular",
+                                          fontSize: 18,
+                                          color: blue,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
+                            ),
                           ),
                           Container(
-                            height: 100,
-                            padding: EdgeInsets.all(20.0),
-                            alignment: Alignment.center,
+                            alignment: Alignment.topLeft,
+                            padding: EdgeInsets.fromLTRB(30, 30, 0, 0),
                             child: Text("Favourites",
                               style: TextStyle(
                                 fontFamily: "viga_regular",
-                                fontSize: 15,
+                                fontSize: 24,
                               ),
                             ),
                           ),
-                          Container(
-                            width: 347,
-                            height: 103,
-                            child: Stack(
-                              children: <Widget>[
-                                Positioned(
-                                    top: 0,
-                                    left: 0,
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(15, 15, 0, 15),
                                     child: Container(
-                                        width: 347,
-                                        height: 103,
-                                        child: Stack(
-                                            children: <Widget>[
-                                              Positioned(
-                                                top: 0,
-                                                left: 0,
-                                                child: Container(
-                                                  width: 347,
-                                                  height: 103,
-                                                  decoration: BoxDecoration(
-                                                    borderRadius : BorderRadius.only(
-                                                      topLeft: Radius.circular(22),
-                                                      topRight: Radius.circular(22),
-                                                      bottomLeft: Radius.circular(22),
-                                                      bottomRight: Radius.circular(22),
-                                                    ),
-                                                    boxShadow : [
-                                                      BoxShadow(
-                                                        color: Color.fromRGBO(90, 108, 234, 0.07000000029802322),
-                                                        offset: Offset(12,26),
-                                                        blurRadius: 50
-                                                      )
-                                                    ],
-                                                    color : Color.fromRGBO(255, 255, 255, 1),
-                                                  )
-                                                )
-                                              ),
-                                              Positioned(
-                                                top: 19,
-                                                left: 93.4462890625,
-                                                child: Text(
-                                                  'Greendot',
-                                                  textAlign: TextAlign.left,
-                                                  style: TextStyle(
-                                                    color: Color.fromRGBO(9, 4, 27, 1),
-                                                    fontFamily: 'Viga',
-                                                    fontSize: 15,
-                                                    letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-                                                    fontWeight: FontWeight.normal,
-                                                    height: 1.5 /*PERCENT not supported*/
-                                                  ),
-                                                )
-                                              ),
-                                              Positioned(
-                                                top: 43,
-                                                left: 93.4462890625,
-                                                child: Text(
-                                                  'Paya Lebar Square',
-                                                  textAlign: TextAlign.left,
-                                                  style: TextStyle(
-                                                    color: Color.fromRGBO(59, 59, 59, 1),
-                                                    fontFamily: 'Inter',
-                                                    fontSize: 14,
-                                                    letterSpacing: 0.5,
-                                                    fontWeight: FontWeight.normal,
-                                                    height: 1
-                                                  ),
-                                                )
-                                              ),
-                                              Positioned(
-                                                  top: 65,
-                                                  left: 93.8916015625,
-                                                  child: Text(
-                                                    '\$ 30',
-                                                    textAlign: TextAlign.left,
-                                                    style: TextStyle(
-                                                      fontFamily: 'Viga',
-                                                      fontSize: 19,
-                                                      letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-                                                      fontWeight: FontWeight.normal,
-                                                      height: 1.5, /*PERCENT not supported*/
-                                                      color: Color.fromRGBO(189, 0, 255, 1)
-                                                    ),
-                                                  )
-                                              ),
-                                              Positioned(
-                                                top: 37,
-                                                left: 245,
-                                                child: Container(
-                                                  width: 85,
-                                                  height: 29,
-                                                  child: Stack(
-                                                    children: <Widget>[
-                                                      Positioned(
-                                                        top: 0,
-                                                        left: 0,
-                                                        child: Container(
-                                                            width: 85,
-                                                            height: 29,
-                                                            decoration: BoxDecoration(
-                                                              borderRadius : BorderRadius.only(
-                                                                topLeft: Radius.circular(17.5),
-                                                                topRight: Radius.circular(17.5),
-                                                                bottomLeft: Radius.circular(17.5),
-                                                                bottomRight: Radius.circular(17.5),
-                                                              ),
-                                                              gradient : LinearGradient(
-                                                                  begin: Alignment(0.8459399938583374,0.1310659646987915),
-                                                                  end: Alignment(-0.1310659646987915,0.11150387674570084),
-                                                                  colors: [Color.fromRGBO(152, 187, 255, 1),Color.fromRGBO(55, 118, 240, 1)]
-                                                              ),
-                                                            )
-                                                        )
-                                                      ),
-                                                      Positioned(
-                                                        top: 9,
-                                                        left: 11,
-                                                        child: Text(
-                                                          'Buy Again',
-                                                          textAlign: TextAlign.left,
-                                                          style: TextStyle(
-                                                            color: Color.fromRGBO(255, 255, 255, 1),
-                                                            fontFamily: 'Viga',
-                                                            fontSize: 12,
-                                                            letterSpacing: 0.5,
-                                                            fontWeight: FontWeight.normal,
-                                                            height: 1
-                                                          ),
-                                                        )
-                                                      ),
-                                                    ]
-                                                  )
-                                                )
-                                              ),
-                                            ]
-                                        )
-                                    )
-                                ),
-                              ]
-                            )
-                          ),
-                          Container(
-                            width: 347,
-                            height: 103,
-                            child: Stack(
-                              children: <Widget>[
-                                Positioned(
-                                  top: 0,
-                                  left: 0,
-                                  child: Container(
-                                    width: 347,
-                                    height: 103,
-                                    child: Stack(
-                                      children: <Widget>[
-                                        Positioned(
-                                            top: 0,
-                                            left: 0,
-                                            child: Container(
-                                                width: 347,
-                                                height: 103,
-                                                decoration: BoxDecoration(
-                                                  borderRadius : BorderRadius.only(
-                                                    topLeft: Radius.circular(22),
-                                                    topRight: Radius.circular(22),
-                                                    bottomLeft: Radius.circular(22),
-                                                    bottomRight: Radius.circular(22),
-                                                  ),
-                                                  boxShadow : [
-                                                    BoxShadow(
-                                                        color: Color.fromRGBO(90, 108, 234, 0.07000000029802322),
-                                                        offset: Offset(12,26),
-                                                        blurRadius: 50
-                                                    )
-                                                  ],
-                                                  color : Color.fromRGBO(255, 255, 255, 1),
-                                                )
-                                            )
+                                        height:53,
+                                        width: 56,
+                                        child: Image.asset('images/greendot_logo.png')
+                                    ),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text("GreenDot",
+                                        style: TextStyle(
+                                          fontFamily: "viga_regular",
+                                          fontSize: 18,
                                         ),
-                                        Positioned(
-                                            top: 19,
-                                            left: 93.4462890625,
-                                            child: Text(
-                                              'Ji De Chi',
-                                              textAlign: TextAlign.left,
-                                              style: TextStyle(
-                                                  color: Color.fromRGBO(9, 4, 27, 1),
-                                                  fontFamily: 'Viga',
-                                                  fontSize: 15,
-                                                  letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-                                                  fontWeight: FontWeight.normal,
-                                                  height: 1.5 /*PERCENT not supported*/
-                                              ),
-                                            )
-                                        ),
-                                        Positioned(
-                                            top: 43,
-                                            left: 93.4462890625,
-                                            child: Text(
-                                              'Paya Lebar Square',
-                                              textAlign: TextAlign.left,
-                                              style: TextStyle(
-                                                  color: Color.fromRGBO(59, 59, 59, 1),
-                                                  fontFamily: 'Inter',
-                                                  fontSize: 14,
-                                                  letterSpacing: 0.5,
-                                                  fontWeight: FontWeight.normal,
-                                                  height: 1
-                                              ),
-                                            )
-                                        ),
-                                        Positioned(
-                                          top: 65,
-                                          left: 93.8916015625,
-                                          child: Text(
-                                            '\$ 5',
-                                            textAlign: TextAlign.left,
+                                      ),
+                                      Text(
+                                          "Paya Lebar Square",
+                                          style: TextStyle(
+                                            fontFamily: "inter",
+                                            fontSize: 14,
+                                          )
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                                        child: Text(
+                                            "\$2 Off Takeaway",
                                             style: TextStyle(
-                                              fontFamily: 'Viga',
-                                              fontSize: 19,
-                                              letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-                                              fontWeight: FontWeight.normal,
-                                              height: 1.5,
-                                              color: Color.fromRGBO(189, 0, 255, 1)
-                                            ),
-                                          )
-                                        ),
-                                        Positioned(
-                                          top: 37,
-                                          left: 245,
-                                          child: Container(
-                                            width: 85,
-                                            height: 29,
-                                            child: Stack(
-                                              children: <Widget>[
-                                                Positioned(
-                                                    top: 0,
-                                                    left: 0,
-                                                    child: Container(
-                                                        width: 85,
-                                                        height: 29,
-                                                        decoration: BoxDecoration(
-                                                          borderRadius : BorderRadius.only(
-                                                            topLeft: Radius.circular(17.5),
-                                                            topRight: Radius.circular(17.5),
-                                                            bottomLeft: Radius.circular(17.5),
-                                                            bottomRight: Radius.circular(17.5),
-                                                          ),
-                                                          gradient : LinearGradient(
-                                                              begin: Alignment(0.8459399938583374,0.1310659646987915),
-                                                              end: Alignment(-0.1310659646987915,0.11150387674570084),
-                                                              colors: [Color.fromRGBO(152, 187, 255, 1),Color.fromRGBO(55, 118, 240, 1)]
-                                                          ),
-                                                        )
-                                                    )
-                                                ),
-                                                Positioned(
-                                                    top: 9,
-                                                    left: 11,
-                                                    child: Text(
-                                                      'Buy Again',
-                                                      textAlign: TextAlign.left,
-                                                      style: TextStyle(
-                                                          color: Color.fromRGBO(255, 255, 255, 1),
-                                                          fontFamily: 'Viga',
-                                                          fontSize: 12,
-                                                          letterSpacing: 0.5,
-                                                          fontWeight: FontWeight.normal,
-                                                          height: 1
-                                                      ),
-                                                    )
-                                                ),
-                                              ]
+                                              fontFamily: "inter",
+                                              fontSize: 16,
+                                              color: blue,
                                             )
-                                          )
                                         ),
-                                      ]
-                                    )
+                                      ),
+                                    ],
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                                    child: Container(
+                                      child: Padding(
+                                        padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+                                        child: Text(
+                                          "Buy Again",
+                                          style: TextStyle(
+                                              color: white,
+                                              fontSize: 12
+                                          ),
+                                        ),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(15),
+                                        color: blue,
+                                      ),
+                                    ),
                                   )
-                                ),
-                              ]
-                            )
+                                ],
+                              ),
+                            ),
                           ),
-                          Container(
-                            width: 347,
-                            height: 103,
-                            child: Stack(
-                              children: <Widget>[
-                                Positioned(
-                                  top: 0,
-                                  left: 0,
-                                  child: Container(
-                                    width: 347,
-                                    height: 103,
-                                    child: Stack(
-                                      children: <Widget>[
-                                        Positioned(
-                                            top: 0,
-                                            left: 0,
-                                            child: Container(
-                                                width: 347,
-                                                height: 103,
-                                                decoration: BoxDecoration(
-                                                  borderRadius : BorderRadius.only(
-                                                    topLeft: Radius.circular(22),
-                                                    topRight: Radius.circular(22),
-                                                    bottomLeft: Radius.circular(22),
-                                                    bottomRight: Radius.circular(22),
-                                                  ),
-                                                  boxShadow : [
-                                                    BoxShadow(
-                                                        color: Color.fromRGBO(90, 108, 234, 0.07000000029802322),
-                                                        offset: Offset(12,26),
-                                                        blurRadius: 50
-                                                    )
-                                                  ],
-                                                  color : Color.fromRGBO(255, 255, 255, 1),
-                                                )
-                                            )
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(15, 15, 0, 15),
+                                    child: Container(
+                                        height:53,
+                                        width: 56,
+                                        child: Image.asset('images/jidechi_logo.png')
+                                    ),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text("Ji De Chi Dessert",
+                                        style: TextStyle(
+                                          fontFamily: "viga_regular",
+                                          fontSize: 18,
                                         ),
-                                        Positioned(
-                                            top: 19,
-                                            left: 93.4462890625,
-                                            child: Text(
-                                              'Saute Sushi',
-                                              textAlign: TextAlign.left,
-                                              style: TextStyle(
-                                                  color: Color.fromRGBO(9, 4, 27, 1),
-                                                  fontFamily: 'Viga',
-                                                  fontSize: 15,
-                                                  letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-                                                  fontWeight: FontWeight.normal,
-                                                  height: 1.5 /*PERCENT not supported*/
-                                              ),
-                                            )
-                                        ),
-                                        Positioned(
-                                            top: 43,
-                                            left: 93.4462890625,
-                                            child: Text(
-                                              'Paya Lebar Square',
-                                              textAlign: TextAlign.left,
-                                              style: TextStyle(
-                                                  color: Color.fromRGBO(59, 59, 59, 1),
-                                                  fontFamily: 'Inter',
-                                                  fontSize: 14,
-                                                  letterSpacing: 0.5,
-                                                  fontWeight: FontWeight.normal,
-                                                  height: 1
-                                              ),
-                                            )
-                                        ),
-                                        Positioned(
-                                          top: 65,
-                                          left: 93.8916015625,
-                                          child: Text(
-                                            '\$ 20',
-                                            textAlign: TextAlign.left,
-                                            style: TextStyle(
-                                              fontFamily: 'Viga',
-                                              fontSize: 19,
-                                              letterSpacing: 0 /*percentages not used in flutter. defaulting to zero*/,
-                                              fontWeight: FontWeight.normal,
-                                              height: 1.5,
-                                              color: Color.fromRGBO(189, 0, 255, 1)
-                                            ),
+                                      ),
+                                      Text(
+                                          "Paya Lebar Square",
+                                          style: TextStyle(
+                                            fontFamily: "inter",
+                                            fontSize: 14,
                                           )
-                                        ),
-                                        Positioned(
-                                            top: 37,
-                                            left: 245,
-                                            child: Container(
-                                                width: 85,
-                                                height: 29,
-                                                child: Stack(
-                                                    children: <Widget>[
-                                                      Positioned(
-                                                          top: 0,
-                                                          left: 0,
-                                                          child: Container(
-                                                              width: 85,
-                                                              height: 29,
-                                                              decoration: BoxDecoration(
-                                                                borderRadius : BorderRadius.only(
-                                                                  topLeft: Radius.circular(17.5),
-                                                                  topRight: Radius.circular(17.5),
-                                                                  bottomLeft: Radius.circular(17.5),
-                                                                  bottomRight: Radius.circular(17.5),
-                                                                ),
-                                                                gradient : LinearGradient(
-                                                                    begin: Alignment(0.8459399938583374,0.1310659646987915),
-                                                                    end: Alignment(-0.1310659646987915,0.11150387674570084),
-                                                                    colors: [Color.fromRGBO(152, 187, 255, 1),Color.fromRGBO(55, 118, 240, 1)]
-                                                                ),
-                                                              )
-                                                          )
-                                                      ),
-                                                      Positioned(
-                                                          top: 9,
-                                                          left: 11,
-                                                          child: Text(
-                                                            'Buy Again',
-                                                            textAlign: TextAlign.left,
-                                                            style: TextStyle(
-                                                                color: Color.fromRGBO(255, 255, 255, 1),
-                                                                fontFamily: 'Viga',
-                                                                fontSize: 12,
-                                                                letterSpacing: 0.5,
-                                                                fontWeight: FontWeight.normal,
-                                                                height: 1
-                                                            ),
-                                                          )
-                                                      ),
-                                                    ]
-                                                )
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                                        child: Text(
+                                            "30% Off Dessert",
+                                            style: TextStyle(
+                                              fontFamily: "inter",
+                                              fontSize: 16,
+                                              color: blue,
                                             )
                                         ),
-                                      ]
-                                    )
+                                      ),
+                                    ],
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                                    child: Container(
+                                      child: Padding(
+                                        padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+                                        child: Text(
+                                          "Buy Again",
+                                          style: TextStyle(
+                                              color: white,
+                                              fontSize: 12
+                                          ),
+                                        ),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(15),
+                                        color: blue,
+                                      ),
+                                    ),
                                   )
-                                ),
-                              ]
-                            )
+                                ],
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(15, 15, 0, 15),
+                                    child: Container(
+                                        height:53,
+                                        width: 56,
+                                        child: Image.asset('images/hawker.jpeg')
+                                    ),
+                                  ),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text("Haig Road Market",
+                                        style: TextStyle(
+                                          fontFamily: "viga_regular",
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                      Text(
+                                          "Haig Road",
+                                          style: TextStyle(
+                                            fontFamily: "inter",
+                                            fontSize: 14,
+                                          )
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                                        child: Text(
+                                            "50 Cents Kopi/Teh",
+                                            style: TextStyle(
+                                              fontFamily: "inter",
+                                              fontSize: 16,
+                                              color: blue,
+                                            )
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(0, 0, 10, 0),
+                                    child: Container(
+                                      child: Padding(
+                                        padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+                                        child: Text(
+                                          "Buy Again",
+                                          style: TextStyle(
+                                              color: white,
+                                              fontSize: 12
+                                          ),
+                                        ),
+                                      ),
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(15),
+                                        color: blue,
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
                           ),
                         ],
                       )
