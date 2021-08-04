@@ -1,4 +1,6 @@
 import 'package:citi_hackathon/profile/profile.dart';
+import 'package:citi_hackathon/scanQRPage/scanQR.dart';
+import 'package:citi_hackathon/successfulScan/successfulScan.dart';
 import 'package:citi_hackathon/voucherPurchase/voucherPurchasePage.dart';
 import 'package:flutter/material.dart';
 import 'package:citi_hackathon/login/login.dart';
@@ -38,6 +40,8 @@ class _MyAppState extends State<MyApp> {
         confirmOrderPage: (BuildContext context) => ConfirmOrderPage(),
         voucherPurchasePage: (BuildContext context) => VoucherPurchasePage(),
         successfulPurchasePage: (BuildContext context) => SuccessfulPurchasePage(),
+        scanQRPage: (BuildContext context) => ScanQRPage(),
+        successfulScan: (BuildContext context) => SuccessfulScan(),
       },
     );
   }
