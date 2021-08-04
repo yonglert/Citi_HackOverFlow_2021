@@ -228,7 +228,7 @@ class VendorPage extends StatelessWidget {
                             padding: EdgeInsets.fromLTRB(40, 5, 40, 10),
                             child: GestureDetector(
                               onTap: () {
-                                Navigator.pushNamed(context, voucherDetailsPage);
+                                Navigator.pushNamed(context, voucherPurchasePage);
                               },
                               child: Container(
                                 child: GestureDetector(

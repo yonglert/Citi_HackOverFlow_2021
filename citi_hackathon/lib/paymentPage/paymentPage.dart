@@ -78,23 +78,55 @@ class _PaymentPageState extends State<PaymentPage> {
                   ),
                   margin: const EdgeInsets.fromLTRB(10,0,10,25),
                 ),
-                Container(
-                  padding: EdgeInsets.fromLTRB(40, 70, 40, 30),
+            ElevatedButton(
+              onPressed: (){
+                Navigator.pop(context);
+              },
+              style: ElevatedButton.styleFrom(
+                  primary: blue,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)
+                  )
+              ),
+              child: SizedBox(
+                width: 200,
+                height: 50,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'Done',
+                    style: TextStyle(
+                      fontFamily: 'viga_regular',
+                      fontSize: 24,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
                   child: ElevatedButton(
                     onPressed: (){},
                     style: ElevatedButton.styleFrom(
                         primary: blue,
-                        padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
-                        fixedSize: Size(450, 70),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(15)
                         )
                     ),
-                    child: Text(
-                      'Share Via',
-                      style: TextStyle(
-                        fontFamily: 'viga_regular',
-                        fontSize: 24,
+                    child: SizedBox(
+                      width: 200,
+                      height: 50,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Share',
+                          style: TextStyle(
+                            fontFamily: 'viga_regular',
+                            fontSize: 24,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                     ),
                   ),

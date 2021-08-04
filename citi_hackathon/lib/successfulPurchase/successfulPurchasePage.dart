@@ -82,7 +82,7 @@ class _SuccessfulPurchasePageState extends State<SuccessfulPurchasePage> {
                   padding: EdgeInsets.fromLTRB(40, 70, 40, 30),
                   child: ElevatedButton(
                     onPressed: (){
-                      Navigator.pushNamed(context, homePage);
+                      Navigator.pop(context);
                     },
                     style: ElevatedButton.styleFrom(
                         primary: blue,

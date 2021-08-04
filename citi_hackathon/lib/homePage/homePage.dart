@@ -253,7 +253,7 @@ class _HomePageState extends State<HomePage> {
                                                       Center(
                                                         child: Container(
                                                             child: Text(
-                                                              "Haig Road\nMarket",
+                                                              "Blanco Court\nPrawn Mee",
                                                               style: TextStyle(
                                                                 fontFamily: 'viga_regular',
                                                                 fontSize: 18,

@@ -211,6 +211,7 @@ class _VoucherPurchasePageState extends State<VoucherPurchasePage> {
                 padding: EdgeInsets.fromLTRB(30, 10, 30, 30),
                 child: ElevatedButton(
                   onPressed: (){
+                    Navigator.pop(context);
                     Navigator.pushNamed(context, confirmOrderPage);
                   },
                   style: ElevatedButton.styleFrom(
