@@ -197,17 +197,23 @@ class VendorPage extends StatelessWidget {
                           Container(
                             height: 100,
                             alignment: Alignment.center,
-                            child: Image.asset('images/facebook.png'),
+                            child: GestureDetector(
+                              child: Image.asset("images/voucher_1.png")
+                            ),
                           ),
                           Container(
                             height: 100,
                             alignment: Alignment.center,
-                            child: Image.asset('images/facebook.png'),
+                            child: GestureDetector(
+                                child: Image.asset("images/voucher_2.png")
+                            ),
                           ),
                           Container(
                             height: 100,
                             alignment: Alignment.center,
-                            child: Image.asset('images/facebook.png'),
+                            child: GestureDetector(
+                                child: Image.asset("images/voucher_3.png")
+                            ),
                           ),
 
                         ],
