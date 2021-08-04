@@ -1,4 +1,3 @@
-import 'dart:ffi';
 import 'dart:io';
 import 'dart:developer';
 import 'package:flutter/foundation.dart';
@@ -72,66 +71,37 @@ class _ScanQRPageState extends State<ScanQRPage> {
                     children: <Widget>[
                       Container(
                         margin: EdgeInsets.all(8),
-                        child: ElevatedButton(
-                            onPressed: () async {
+                        child: GestureDetector(
+                            onTap: () async {
                               await controller?.toggleFlash();
                               setState(() {});
                             },
-                            style: ElevatedButton.styleFrom(
-                                primary: blue,
-                                padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
-                                fixedSize: Size(450, 70),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15)
-                                )
+                            child: Icon(
+                              Icons.circle_notifications_outlined,
+                              color: blue,
+                              size: 45,
                             ),
-                            child: FutureBuilder(
-                              future: controller?.getFlashStatus(),
-                              builder: (context, snapshot) {
-                                return Text('Flash: ${snapshot.data}',
-                                    style: TextStyle(fontSize: 30,
-                                    fontFamily: "inter",
-                                    fontWeight: FontWeight.bold,
-                                    color: white));
-                              },
-                            )),
+                            ),
                       ),
                       Container(
                         margin: EdgeInsets.all(8),
-                        child: ElevatedButton(
-                            onPressed: () async {
-                              await controller?.flipCamera();
-                              setState(() {});
-                            },
-                            style: ElevatedButton.styleFrom(
-                                primary: blue,
-                                padding: EdgeInsets.fromLTRB(15, 5, 15, 5),
-                                fixedSize: Size(450, 70),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15)
-                                )
+                        child: GestureDetector(
+                          onTap: () async {
+                            await controller?.flipCamera();
+                            setState(() {});
+                          },
+                          child: Container(
+                            child: Container(
+                              height: 120,
+                              width: 150,
+                              child: Padding(
+                                padding: const EdgeInsets.all(15.0),
+                                child: Image.asset('images/rotate-camera.png'),
+                              ),
                             ),
-                            child: FutureBuilder(
-                              future: controller?.getCameraInfo(),
-                              builder: (context, snapshot) {
-                                if (snapshot.data != null) {
-                                  return Text(
-                                      'Camera facing ${describeEnum(snapshot.data!)}',
-                                      style: TextStyle(fontSize: 30,
-                                      fontFamily: "inter",
-                                      fontWeight: FontWeight.bold,
-                                      color: white));
-                                } else {
-                                  return Text('Loading',
-                                      style: TextStyle(
-                                        fontFamily: 'inter',
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold,
-                                        color: white,
-                                      ));
-                                }
-                              },
-                            )),
+                          ),
+                        ),
+
                       )
                     ],
                   ),
@@ -219,6 +189,7 @@ class _ScanQRPageState extends State<ScanQRPage> {
     controller.scannedDataStream.listen((scanData) {
       setState(() {
         result = scanData;
+        print(result);
         _onSuccess();
       });
     });

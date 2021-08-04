@@ -1,4 +1,3 @@
-import 'dart:ffi';
 
 import 'package:citi_hackathon/const/routeNames.dart';
 import 'package:flutter/cupertino.dart';
@@ -76,50 +75,7 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                     )
                                   ],
                                 ),
-                                  Container(
-                                      padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
-                                      child: TextField(
-                                          style: TextStyle(
-                                            fontFamily: 'inter',
-                                            fontSize: 14,
-                                          ),
-                                          textAlign: TextAlign.left,
-                                          onChanged: (text) {
-                                            if (text != "") {
-                                              inputField = true;
-                                            } else {
-                                              inputField = false;
-                                            }
-                                          },
-                                          decoration: InputDecoration(
-                                              suffixIcon: Icon(Icons.east),
-                                              prefixIcon: Icon(
-                                                Icons.search_outlined,
-                                                color: black,
-                                              ),
-                                              floatingLabelBehavior: FloatingLabelBehavior.auto,
-                                              fillColor: Colors.white30,
-                                              filled: true,
-                                              border: OutlineInputBorder(
-                                                borderRadius: BorderRadius.circular(15),
-                                              ),
-                                              focusedBorder: OutlineInputBorder(
-                                                  borderRadius: BorderRadius.circular(15),
-                                                  borderSide: BorderSide(
-                                                    color: black,
-                                                  )
-                                              ),
-                                              contentPadding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                                              labelText: "What vouchers are you looking for?",
-                                              labelStyle: TextStyle(
-                                                fontFamily: 'inter',
-                                                fontSize: 12,
-                                                color: black,
-                                              )
-                                          )
-                                      )
-                                  ),
-                                  SizedBox(height: 20),]
+                                  ]
                             ),
                             Expanded(
                                 flex: 1,
@@ -143,14 +99,7 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                       child: Row(
                                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                         children: <Widget> [
-                                          Expanded(
-                                            flex: 1,
-                                            child: Container(
-                                                height: 120,
-                                                width: 120,
-                                                child: Image.asset('images/singapore.png')
-                                            ),
-                                          ),
+
                                           Expanded(
                                             flex: 1,
                                             child: Container(
@@ -159,22 +108,24 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                 children: <Widget> [
                                                   Container(
+
                                                     child: Text(
-                                                      'National Day\nPromotions',
+                                                      'Total Credit\n \$400.02',
                                                       style: TextStyle(
                                                         fontSize: 22,
                                                         color: white,
                                                         fontFamily: 'viga_regular',
                                                       ),
                                                     ),
-                                                    padding: EdgeInsets.fromLTRB(0, 20, 30, 10),
+                                                    padding: EdgeInsets.fromLTRB(20, 20, 30, 10),
                                                   ),
                                                   GestureDetector(
                                                     onTap: (){
-                                                      Navigator.pushNamed(context, voucherPurchasePage);
+                                                      Navigator.pop(context);
+                                                      Navigator.pushNamed(context, pastTransactionsPage);
                                                     },
                                                     child: Container(
-                                                      padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                                                      padding: EdgeInsets.fromLTRB(20, 10, 30, 10),
                                                       decoration: BoxDecoration(
                                                         color: white,
                                                         borderRadius: BorderRadius.circular(15),
@@ -183,15 +134,17 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                                         ),
                                                       ),
                                                       child: Text(
-                                                        'Buy Now!',
+                                                        'View Details',
                                                         style:
                                                         TextStyle(
                                                             color: blue,
                                                             fontWeight: FontWeight.bold,
                                                             fontFamily: 'viga_regular'
                                                         ),
+
                                                       ),
                                                     ),
+
                                                   ),
                                                 ],
                                               ),
@@ -200,56 +153,38 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                         ],
                                       ),
                                     ),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      children: <Widget> [
-                                        Container(
-                                            padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
-                                            child: Text(
-                                              "Nearest Shopping Places",
-                                              style: TextStyle(
-                                                fontFamily: 'viga_regular',
-                                                fontSize: 20,
-                                              ),
-                                            )
-                                        ),
-                                        Container(
-                                            padding: EdgeInsets.fromLTRB(0, 20, 30, 0),
-                                            child: Text(
-                                              "View More",
-                                              style: TextStyle(
-                                                fontFamily: 'viga_regular',
-                                                fontSize: 14,
-                                                color: blue,
-                                              ),
-                                            )
-                                        ),
-                                      ],
-                                    ),
+
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                       children: <Widget> [
                                         Padding(
                                           padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
                                           child: Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(15.0),
-                                                color: Colors.white,
-                                              ),
+
                                               child: Column(
                                                 crossAxisAlignment: CrossAxisAlignment.center,
                                                 children: <Widget>[
-                                                  Container(
+
+                                                  GestureDetector(
+                                                    onTap: (){
+                                                      Navigator.pop(context);
+                                                      Navigator.pushNamed(context, scanQRPage);
+                                                    },
                                                     child: Container(
+                                                      child: Container(
                                                         height: 120,
                                                         width: 150,
-                                                        child: Image.asset('images/hawker.jpeg')
+                                                        child: Padding(
+                                                        padding: const EdgeInsets.all(15.0),
+                                                        child: Image.asset('images/logo.png'),
+                                                        ),
                                                     ),
+                                                  ),
                                                   ),
                                                   Center(
                                                     child: Container(
                                                         child: Text(
-                                                          "Haig Road\nMarket",
+                                                          "Scan QR\nCode",
                                                           style: TextStyle(
                                                             fontFamily: 'viga_regular',
                                                             fontSize: 18,
@@ -259,16 +194,6 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                                     ),
                                                   ),
                                                   SizedBox(height: 5,),
-                                                  Container(
-                                                      child: Text(
-                                                        "2.1 km",
-                                                        style: TextStyle(
-                                                          fontFamily: 'inter',
-                                                          fontSize: 14,
-                                                          color: grey,
-                                                        ),
-                                                      )
-                                                  ),
                                                   SizedBox(height: 15,)
                                                 ],
                                               )
@@ -277,10 +202,7 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                         Padding(
                                           padding: const EdgeInsets.fromLTRB(0, 10, 10, 0),
                                           child: Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(15.0),
-                                                color: Colors.white,
-                                              ),
+
                                               child: Column(
                                                 crossAxisAlignment: CrossAxisAlignment.center,
                                                 children: <Widget>[
@@ -290,14 +212,14 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                                         width: 150,
                                                         child: Padding(
                                                           padding: const EdgeInsets.all(15.0),
-                                                          child: Image.asset('images/PLS_logo.png'),
+                                                          child: Image.asset('images/store.jpg'),
                                                         )
                                                     ),
                                                   ),
                                                   Center(
                                                     child: Container(
                                                         child: Text(
-                                                          "Paya Lebar\nSquare",
+                                                          "Store\nDetails",
                                                           style: TextStyle(
                                                             fontFamily: 'viga_regular',
                                                             fontSize: 18,
@@ -307,16 +229,6 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                                     ),
                                                   ),
                                                   SizedBox(height: 5,),
-                                                  Container(
-                                                      child: Text(
-                                                        "2.2 km",
-                                                        style: TextStyle(
-                                                          fontFamily: 'inter',
-                                                          fontSize: 14,
-                                                          color: grey,
-                                                        ),
-                                                      )
-                                                  ),
                                                   SizedBox(height: 15,)
                                                 ],
                                               )
@@ -330,7 +242,7 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                         Container(
                                             padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
                                             child: Text(
-                                              "Popular Stores",
+                                              "Recent Transactions",
                                               style: TextStyle(
                                                 fontFamily: 'viga_regular',
                                                 fontSize: 20,
@@ -340,7 +252,7 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                         Container(
                                             padding: EdgeInsets.fromLTRB(0, 20, 30, 0),
                                             child: Text(
-                                              "View More",
+                                              "View all",
                                               style: TextStyle(
                                                 fontFamily: 'viga_regular',
                                                 fontSize: 14,
@@ -351,9 +263,9 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.fromLTRB(30, 10, 30, 5),
+                                      padding: EdgeInsets.fromLTRB(20, 0, 20, 5),
                                       child: Container(
-                                        height: 120,
+                                        height: 80,
                                         width: 325,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
@@ -361,40 +273,42 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                         ),
                                         child: Row(
                                           children: [
+
                                             Padding(
                                               padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
-                                              child: Image.asset('images/love_bonito.png'),
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.all(8.0),
                                               child: Column(
                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
-                                                  Text("Love Bonito",
-                                                      style: TextStyle(
-                                                        fontFamily: 'viga_regular',
-                                                        fontSize: 24,
-                                                      )
-                                                  ),
-                                                  Text("10 Vouchers Available",
+
+                                                  Text("3 August 2021 | 20:58:13",
                                                       style: TextStyle(
                                                         fontFamily: 'inter',
-                                                        fontSize: 14,
-                                                        color: blue,
+                                                        fontSize: 15,
+                                                        color: black,
                                                       )
                                                   ),
+
                                                 ],
                                               ),
+                                            ),
+                                            Padding(
+                                                padding: const EdgeInsets.all(4.0),
+                                                child: Text('\$9.62', style: TextStyle(
+                                                  fontFamily: 'inter',
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 20,
+                                                  color: black,
+                                                ))
                                             ),
                                           ],
                                         ),
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.fromLTRB(30, 0, 30, 5),
+                                      padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
                                       child: Container(
-                                        height: 120,
+                                        height: 80,
                                         width: 325,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
@@ -402,31 +316,33 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                         ),
                                         child: Row(
                                           children: [
+
                                             Padding(
                                               padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
-                                              child: Image.asset('images/kopitiam.jpeg', width: 100,height: 100),
-                                            ),
-                                            Padding(
-                                              padding: const EdgeInsets.all(8.0),
                                               child: Column(
                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                 crossAxisAlignment: CrossAxisAlignment.start,
                                                 children: [
-                                                  Text("Kopitiam",
-                                                      style: TextStyle(
-                                                        fontFamily: 'viga_regular',
-                                                        fontSize: 24,
-                                                      )
-                                                  ),
-                                                  Text("14 Vouchers Available",
+
+                                                  Text("3 August 2021 | 20:56:10",
                                                       style: TextStyle(
                                                         fontFamily: 'inter',
-                                                        fontSize: 14,
-                                                        color: blue,
+                                                        fontSize: 15,
+                                                        color: black,
                                                       )
                                                   ),
+
                                                 ],
                                               ),
+                                            ),
+                                            Padding(
+                                                padding: const EdgeInsets.all(4.0),
+                                                child: Text('\$19.24', style: TextStyle(
+                                                  fontFamily: 'inter',
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 20,
+                                                  color: black,
+                                                ))
                                             ),
                                           ],
                                         ),

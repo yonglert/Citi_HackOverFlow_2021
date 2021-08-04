@@ -1,9 +1,7 @@
-import 'dart:ffi';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:citi_hackathon/const/colors.dart';
-import 'package:citi_hackathon/homePage/homePage.dart';
 import 'package:citi_hackathon/const/routeNames.dart';
 
 
@@ -91,7 +89,7 @@ class _PastTransactionsPageState extends State<PastTransactionsPage> {
                                   child: Column(
                                     children: <Widget>[
                                       Padding(
-                                        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                        padding: EdgeInsets.fromLTRB(20, 0, 20, 5),
                                         child: Container(
                                           height: 80,
                                           width: 325,
@@ -124,6 +122,7 @@ class _PastTransactionsPageState extends State<PastTransactionsPage> {
                                                   padding: const EdgeInsets.all(4.0),
                                                   child: Text('\$9.62', style: TextStyle(
                                                     fontFamily: 'inter',
+                                                    fontWeight: FontWeight.bold,
                                                     fontSize: 20,
                                                     color: black,
                                                   ))
@@ -133,7 +132,7 @@ class _PastTransactionsPageState extends State<PastTransactionsPage> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                        padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
                                         child: Container(
                                           height: 80,
                                           width: 325,
@@ -151,7 +150,7 @@ class _PastTransactionsPageState extends State<PastTransactionsPage> {
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   children: [
 
-                                                    Text("3 August 2021 | 20:58:13",
+                                                    Text("3 August 2021 | 20:56:10",
                                                         style: TextStyle(
                                                           fontFamily: 'inter',
                                                           fontSize: 15,
@@ -164,8 +163,9 @@ class _PastTransactionsPageState extends State<PastTransactionsPage> {
                                               ),
                                               Padding(
                                                   padding: const EdgeInsets.all(4.0),
-                                                  child: Text('\$9.62', style: TextStyle(
+                                                  child: Text('\$19.24', style: TextStyle(
                                                     fontFamily: 'inter',
+                                                    fontWeight: FontWeight.bold,
                                                     fontSize: 20,
                                                     color: black,
                                                   ))
@@ -175,7 +175,7 @@ class _PastTransactionsPageState extends State<PastTransactionsPage> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                        padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
                                         child: Container(
                                           height: 80,
                                           width: 325,
@@ -193,7 +193,7 @@ class _PastTransactionsPageState extends State<PastTransactionsPage> {
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   children: [
 
-                                                    Text("3 August 2021 | 20:58:13",
+                                                    Text("3 August 2021 | 20:54:12",
                                                         style: TextStyle(
                                                           fontFamily: 'inter',
                                                           fontSize: 15,
@@ -208,6 +208,7 @@ class _PastTransactionsPageState extends State<PastTransactionsPage> {
                                                   padding: const EdgeInsets.all(4.0),
                                                   child: Text('\$9.62', style: TextStyle(
                                                     fontFamily: 'inter',
+                                                    fontWeight: FontWeight.bold,
                                                     fontSize: 20,
                                                     color: black,
                                                   ))
@@ -217,7 +218,7 @@ class _PastTransactionsPageState extends State<PastTransactionsPage> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                        padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
                                         child: Container(
                                           height: 80,
                                           width: 325,
@@ -235,7 +236,7 @@ class _PastTransactionsPageState extends State<PastTransactionsPage> {
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   children: [
 
-                                                    Text("3 August 2021 | 20:58:13",
+                                                    Text("3 August 2021 | 20:52:08",
                                                         style: TextStyle(
                                                           fontFamily: 'inter',
                                                           fontSize: 15,
@@ -250,6 +251,7 @@ class _PastTransactionsPageState extends State<PastTransactionsPage> {
                                                   padding: const EdgeInsets.all(4.0),
                                                   child: Text('\$9.62', style: TextStyle(
                                                     fontFamily: 'inter',
+                                                    fontWeight: FontWeight.bold,
                                                     fontSize: 20,
                                                     color: black,
                                                   ))
@@ -259,7 +261,7 @@ class _PastTransactionsPageState extends State<PastTransactionsPage> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                                        padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
                                         child: Container(
                                           height: 80,
                                           width: 325,
@@ -277,7 +279,7 @@ class _PastTransactionsPageState extends State<PastTransactionsPage> {
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   children: [
 
-                                                    Text("3 August 2021 | 20:58:13",
+                                                    Text("3 August 2021 | 20:51:00",
                                                         style: TextStyle(
                                                           fontFamily: 'inter',
                                                           fontSize: 15,
@@ -290,8 +292,9 @@ class _PastTransactionsPageState extends State<PastTransactionsPage> {
                                               ),
                                               Padding(
                                                   padding: const EdgeInsets.all(4.0),
-                                                  child: Text('\$9.62', style: TextStyle(
+                                                  child: Text('\$38.48', style: TextStyle(
                                                     fontFamily: 'inter',
+                                                    fontWeight: FontWeight.bold,
                                                     fontSize: 20,
                                                     color: black,
                                                   ))
