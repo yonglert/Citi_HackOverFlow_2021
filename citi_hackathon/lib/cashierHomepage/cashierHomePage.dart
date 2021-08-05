@@ -58,7 +58,7 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                       child: GestureDetector(
                                         onTap: () {
                                           Navigator.pop(context);
-                                          Navigator.pushNamed(context, loginPage);
+                                          Navigator.pushNamed(context, pastTransactionsPage);
                                         },
                                         child: Container(
                                           decoration: BoxDecoration(
