@@ -42,13 +42,13 @@ class _PaymentPageState extends State<PaymentPage> {
                     ]
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(0,50,0,0),
+                  padding: const EdgeInsets.fromLTRB(0,40,0,0),
                   child: Center(
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget> [
                           Container(
-                            padding: EdgeInsets.fromLTRB(30, 20, 0, 0),
+                            padding: EdgeInsets.fromLTRB(30, 20, 30, 0),
                             child: Container(
                               height: 300,
                               width: 300,

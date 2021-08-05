@@ -247,7 +247,7 @@ class _HomePageState extends State<HomePage> {
                                                         child: Container(
                                                             height: 120,
                                                             width: 150,
-                                                            child: Image.asset('images/hawker.jpeg')
+                                                            child: Image.asset('images/blanco_court_logo.jpg')
                                                         ),
                                                       ),
                                                       Center(

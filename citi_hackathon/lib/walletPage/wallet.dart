@@ -87,7 +87,7 @@ class _WalletPageState extends State<WalletPage> {
                                             children: [
                                               Padding(
                                                 padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
-                                                child: Image.asset('images/kopitiam.jpeg', width: 100,height: 100),
+                                                child: Image.asset('images/blanco_court_logo.jpg', width: 100,height: 100),
                                               ),
                                               Padding(
                                                 padding: const EdgeInsets.all(8.0),
@@ -95,7 +95,7 @@ class _WalletPageState extends State<WalletPage> {
                                                   mainAxisAlignment: MainAxisAlignment.center,
                                                   crossAxisAlignment: CrossAxisAlignment.start,
                                                   children: [
-                                                    Text("Kopitiam",
+                                                    Text("Blanco Court..",
                                                         style: TextStyle(
                                                           fontFamily: 'viga_regular',
                                                           fontSize: 20,
