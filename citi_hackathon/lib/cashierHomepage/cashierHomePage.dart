@@ -81,88 +81,118 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                 flex: 1,
                                 child: Column(
                                   children: <Widget>[
-                                    Container(
-                                      height: 200,
-                                      width: 325,
-                                      decoration: BoxDecoration(
-                                        gradient: LinearGradient(
-                                            begin: Alignment.topCenter,
-                                            end: Alignment.bottomCenter,
-                                            colors: <Color>[
-                                              Color(0xFF507FDC),
-                                              Color(0xFF5451F3)
-                                            ]
+                                    Padding(
+                                      padding: EdgeInsets.fromLTRB(30, 10, 30, 0),
+                                      child: Container(
+                                        height: 200,
+                                        width: 325,
+                                        decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                              begin: Alignment.topCenter,
+                                              end: Alignment.bottomCenter,
+                                              colors: <Color>[
+                                                Color(0xFF507FDC),
+                                                Color(0xFF5451F3)
+                                              ]
+                                          ),
+                                          color: blue,
+                                          borderRadius: BorderRadius.circular(15),
                                         ),
-                                        color: blue,
-                                        borderRadius: BorderRadius.circular(15),
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: <Widget> [
-
-                                          Expanded(
-                                            flex: 1,
-                                            child: Container(
-                                              child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                mainAxisAlignment: MainAxisAlignment.center,
-                                                children: <Widget> [
-                                                  Container(
-
-                                                    child: Text(
-                                                      'Total Credit\n \$400.02',
-                                                      style: TextStyle(
-                                                        fontSize: 22,
-                                                        color: white,
-                                                        fontFamily: 'viga_regular',
-                                                      ),
-                                                    ),
-                                                    padding: EdgeInsets.fromLTRB(20, 20, 30, 10),
-                                                  ),
-                                                  GestureDetector(
-                                                    onTap: (){
-                                                      Navigator.pop(context);
-                                                      Navigator.pushNamed(context, pastTransactionsPage);
-                                                    },
-                                                    child: Container(
-                                                      padding: EdgeInsets.fromLTRB(20, 10, 30, 10),
-                                                      decoration: BoxDecoration(
-                                                        color: white,
-                                                        borderRadius: BorderRadius.circular(15),
-                                                        border: Border.all(
-                                                            color: white
-                                                        ),
-                                                      ),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                          children: <Widget> [
+                                            Expanded(
+                                              flex: 2,
+                                              child: Container(
+                                                child: Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  children: <Widget> [
+                                                    Container(
                                                       child: Text(
-                                                        'View Details',
-                                                        style:
-                                                        TextStyle(
-                                                            color: blue,
-                                                            fontWeight: FontWeight.bold,
-                                                            fontFamily: 'viga_regular'
+                                                        'Total Credit',
+                                                        style: TextStyle(
+                                                          fontSize: 28,
+                                                          color: white,
+                                                          fontFamily: 'viga_regular',
                                                         ),
-
                                                       ),
+                                                      padding: EdgeInsets.fromLTRB(20, 20, 30, 0),
                                                     ),
+                                                    Container(
+                                                      child: Text(
+                                                        '\$400.02',
+                                                        style: TextStyle(
+                                                          fontSize: 22,
+                                                          color: white,
+                                                          fontFamily: 'viga_regular',
+                                                        ),
+                                                      ),
+                                                      padding: EdgeInsets.fromLTRB(20, 0, 30, 10),
+                                                    ),
+                                                    GestureDetector(
+                                                      onTap: (){
+                                                        Navigator.pop(context);
+                                                        Navigator.pushNamed(context, pastTransactionsPage);
+                                                      },
+                                                      child: Padding(
+                                                        padding: EdgeInsets.fromLTRB(20, 10, 0, 10),
+                                                        child: Container(
+                                                          padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                                                          decoration: BoxDecoration(
+                                                            color: white,
+                                                            borderRadius: BorderRadius.circular(15),
+                                                            border: Border.all(
+                                                                color: white
+                                                            ),
+                                                          ),
+                                                          child: Text(
+                                                            'View Details',
+                                                            style:
+                                                            TextStyle(
+                                                                color: blue,
+                                                                fontWeight: FontWeight.bold,
+                                                                fontFamily: 'viga_regular'
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
 
-                                                  ),
-                                                ],
+                                                    ),
+                                                  ],
+                                                ),
                                               ),
                                             ),
-                                          ),
-                                        ],
+                                            Expanded(
+                                              flex: 1,
+                                              child: Container(
+                                                child: Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  children: <Widget> [
+                                                    Center(
+                                                      child: Icon(Icons.paid, size: 135, color: white),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
 
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment: CrossAxisAlignment.center,
                                       children: <Widget> [
                                         Padding(
-                                          padding: const EdgeInsets.fromLTRB(10, 10, 0, 0),
+                                          padding: const EdgeInsets.fromLTRB(10, 20, 0, 0),
                                           child: Container(
 
                                               child: Column(
                                                 crossAxisAlignment: CrossAxisAlignment.center,
+
                                                 children: <Widget>[
 
                                                   GestureDetector(
@@ -171,27 +201,39 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                                       Navigator.pushNamed(context, scanQRPage);
                                                     },
                                                     child: Container(
-                                                      child: Container(
-                                                        height: 120,
-                                                        width: 150,
-                                                        child: Padding(
-                                                        padding: const EdgeInsets.all(15.0),
-                                                        child: Image.asset('images/logo.png'),
-                                                        ),
-                                                    ),
-                                                  ),
-                                                  ),
-                                                  Center(
-                                                    child: Container(
-                                                        child: Text(
-                                                          "Scan QR\nCode",
-                                                          style: TextStyle(
-                                                            fontFamily: 'viga_regular',
-                                                            fontSize: 18,
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.white,
+                                                        borderRadius: BorderRadius.circular(15),
+                                                      ),
+                                                      child: Column(
+                                                        children: [
+                                                          Container(
+                                                            height: 120,
+                                                            width: 150,
+
+                                                            child: Padding(
+                                                            padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                                                            child: Image.asset('images/logo.png'),
+                                                            ),
                                                           ),
-                                                          textAlign: TextAlign.center,
-                                                        )
-                                                    ),
+                                                          Center(
+                                                            child: Container(
+                                                                child: Padding(
+                                                                  padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                                                  child: Text(
+                                                                    "Scan QRCode",
+                                                                    style: TextStyle(
+                                                                      fontFamily: 'viga_regular',
+                                                                      fontSize: 18,
+                                                                    ),
+                                                                    textAlign: TextAlign.center,
+                                                                  ),
+                                                                )
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
+                                                  ),
                                                   ),
                                                   SizedBox(height: 5,),
                                                   SizedBox(height: 15,)
@@ -200,32 +242,52 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.fromLTRB(0, 10, 10, 0),
+                                          padding: const EdgeInsets.fromLTRB(0, 20, 10, 0),
                                           child: Container(
 
                                               child: Column(
                                                 crossAxisAlignment: CrossAxisAlignment.center,
+
                                                 children: <Widget>[
-                                                  Container(
+
+                                                  GestureDetector(
+                                                    onTap: (){
+                                                      Navigator.pop(context);
+                                                      Navigator.pushNamed(context, scanQRPage);
+                                                    },
                                                     child: Container(
-                                                        height: 120,
-                                                        width: 150,
-                                                        child: Padding(
-                                                          padding: const EdgeInsets.all(15.0),
-                                                          child: Image.asset('images/store.jpg'),
-                                                        )
-                                                    ),
-                                                  ),
-                                                  Center(
-                                                    child: Container(
-                                                        child: Text(
-                                                          "Store\nDetails",
-                                                          style: TextStyle(
-                                                            fontFamily: 'viga_regular',
-                                                            fontSize: 18,
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.white,
+                                                        borderRadius: BorderRadius.circular(15),
+                                                      ),
+                                                      child: Column(
+                                                        children: [
+                                                          Container(
+                                                            height: 120,
+                                                            width: 150,
+
+                                                            child: Padding(
+                                                              padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+                                                              child: Image.asset('images/shop.png'),
+                                                            ),
                                                           ),
-                                                          textAlign: TextAlign.center,
-                                                        )
+                                                          Center(
+                                                            child: Container(
+                                                                child: Padding(
+                                                                  padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                                                                  child: Text(
+                                                                    "View Store",
+                                                                    style: TextStyle(
+                                                                      fontFamily: 'viga_regular',
+                                                                      fontSize: 18,
+                                                                    ),
+                                                                    textAlign: TextAlign.center,
+                                                                  ),
+                                                                )
+                                                            ),
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
                                                   SizedBox(height: 5,),
@@ -263,13 +325,13 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.fromLTRB(20, 0, 20, 5),
+                                      padding: EdgeInsets.fromLTRB(20, 10, 20, 5),
                                       child: Container(
                                         height: 80,
                                         width: 325,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
-                                          borderRadius: BorderRadius.circular(25),
+                                          borderRadius: BorderRadius.circular(15),
                                         ),
                                         child: Row(
                                           children: [
@@ -306,13 +368,13 @@ class _CashierHomePageState extends State<CashierHomePage> {
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.fromLTRB(20, 0, 20, 10),
+                                      padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                                       child: Container(
                                         height: 80,
                                         width: 325,
                                         decoration: BoxDecoration(
                                           color: Colors.white,
-                                          borderRadius: BorderRadius.circular(25),
+                                          borderRadius: BorderRadius.circular(15),
                                         ),
                                         child: Row(
                                           children: [
